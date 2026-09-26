@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ro‘yxatdan o‘tish | 1-son Texnikum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <!-- Background -->
+        <div class="register-grid"></div>
+        <div class="register-circle register-circle-one"></div>
+        <div class="register-circle register-circle-two"></div>
+
+        <div class="register-container">
+
+            <!-- LEFT INFO -->
+            <section class="register-info">
+
+                <a href="index.html" class="register-logo">
+                    <div class="register-logo-icon">1</div>
+
+                    <div class="register-logo-text">
+                        <strong>1-SON TEXNIKUMI</strong>
+                        <span>MODERN EDUCATION</span>
+                    </div>
+                </a>
+
+                <div class="info-content">
+
+                    <div class="register-badge">
+                        <span></span>
+                        Qabul jarayoni boshlandi
+                    </div>
+
+                    <h1>
+                        Kelajagingizni
+                        <span>bugundan boshlang.</span>
+                    </h1>
+
+                    <p>
+                        1-son Texnikumiga ro‘yxatdan o‘ting va
+                        zamonaviy kasb-hunar ta’limi olish imkoniyatiga ega bo‘ling.
+                    </p>
+
+                    <div class="register-benefits">
+
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Oson ro‘yxatdan o‘tish</strong>
+                                <span>Bir necha daqiqada ariza yuboring</span>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Zamonaviy ta’lim</strong>
+                                <span>Kasb va mutaxassisliklar bo‘yicha ta’lim</span>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Talabalar portali</strong>
+                                <span>O‘qish jarayonini onlayn kuzatish</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a href="index.html" class="back-home">
+                    ← Asosiy sahifaga qaytish
+                </a>
+
+            </section>
+
+
+            <!-- REGISTER FORM -->
+            <section class="register-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <h2>Ro‘yxatdan o‘tish</h2>
+                        <p>Ma’lumotlaringizni to‘ldiring</p>
+                    </div>
+
+                </div>
+
+
+                <form id="registerForm" class="register-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="firstName">Ism</label>
+
+                            <div class="input-box">
+                                <span>👤</span>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="Ismingiz"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="lastName">Familiya</label>
+
+                            <div class="input-box">
+                                <span>👤</span>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Familiyangiz"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="phone">Telefon raqam</label>
+
+                        <div class="input-box">
+                            <span>📱</span>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+998 90 123 45 67"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="birthDate">Tug‘ilgan sana</label>
+
+                        <div class="input-box">
+                            <span>📅</span>
+
+                            <input
+                                type="date"
+                                id="birthDate"
+                                name="birthDate"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="direction">Ta’lim yo‘nalishi</label>
+
+                        <div class="input-box select-box">
+                            <span>🎓</span>
+
+                            <select id="direction" name="direction" required>
+                                <option value="">Yo‘nalishni tanlang</option>
+                                <option value="it">Axborot texnologiyalari</option>
+                                <option value="accounting">Buxgalteriya</option>
+                                <option value="economics">Iqtisodiyot</option>
+                                <option value="design">Dizayn</option>
+                                <option value="technology">Texnologiya</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="password">Parol</label>
+
+                        <div class="input-box password-box">
+                            <span>🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Kamida 6 ta belgi"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Parolni ko‘rsatish"
+                            >
+                                👁
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <label class="terms">
+
+                        <input type="checkbox" id="terms" required>
+
+                        <span class="checkmark"></span>
+
+                        <span>
+                            Men
+                            <a href="#">foydalanish shartlariga</a>
+                            roziman.
+                        </span>
+
+                    </label>
+
+
+                    <button type="submit" class="register-btn">
+
+                        <span>Ro‘yxatdan o‘tish</span>
+
+                        <span class="arrow">→</span>
+
+                    </button>
+
+
+                    <div id="formMessage" class="form-message"></div>
+
+                </form>
+
+
+                <div class="login-link">
+                    Hisobingiz bormi?
+                    <a href="login.html">Kirish</a>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="register.js"></script>
+
+</body>
+</html>

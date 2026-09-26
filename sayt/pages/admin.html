@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel | 1-son Texnikumi</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<!-- LOGIN EKRANI -->
+<main class="login-page" id="loginScreen">
+    <section class="login-card" aria-labelledby="loginTitle">
+        <img class="login-logo" src="../assets/image/logo.png" alt="1-son Texnikumi">
+
+        <h1 id="loginTitle">Admin panel</h1>
+        <p class="login-subtitle">Yangiliklar va ta'lim yo'nalishlarini boshqarish</p>
+
+        <form id="adminLoginForm" novalidate>
+            <div class="login-form-group">
+                <label for="adminEmail">Email</label>
+                <input type="email" id="adminEmail" name="email" autocomplete="username" required>
+            </div>
+
+            <div class="login-form-group">
+                <label for="adminPassword">Parol</label>
+                <input type="password" id="adminPassword" name="password" autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary login-submit" id="adminLoginSubmit">
+                Kirish
+            </button>
+
+            <p id="adminLoginMessage" class="login-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <a href="../index.html" class="login-back">← Bosh sahifaga qaytish</a>
+    </section>
+</main>
+
+<!-- ADMIN DASHBOARD -->
+<div class="admin-page" id="dashboardScreen" style="display:none;">
+
+    <div class="admin-header">
+        <h1>Admin panel — 1-son Texnikumi</h1>
+        <div style="display:flex; align-items:center; gap:14px;">
+            <span class="admin-user" id="adminUserEmail"></span>
+            <button class="admin-logout" id="logoutBtn">Chiqish</button>
+        </div>
+    </div>
+
+    <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="newsTab">Yangiliklar</button>
+        <button class="admin-tab" data-tab="coursesTab">Ta'lim yo'nalishlari</button>
+    </div>
+
+    <!-- YANGILIKLAR PANELI -->
+    <section class="admin-panel active" id="newsTab">
+        <div class="admin-card">
+            <h2 id="newsFormTitle">Yangi yangilik qo'shish</h2>
+            <form id="newsForm">
+                <input type="hidden" id="newsId">
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="newsTitle">Sarlavha</label>
+                        <input type="text" id="newsTitle" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="newsCategory">Kategoriya</label>
+                        <input type="text" id="newsCategory" placeholder="Masalan: TADBIR">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="newsDate">Sana</label>
+                        <input type="date" id="newsDate">
+                    </div>
+                    <div class="admin-field">
+                        <label for="newsImage">Rasm</label>
+                        <input type="file" id="newsImage" accept="image/*">
+                        <img id="newsImagePreview" class="admin-preview" alt="">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field full">
+                        <label for="newsDescription">Qisqacha matn</label>
+                        <textarea id="newsDescription"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="admin-submit" id="newsSubmitBtn">Qo'shish</button>
+                <button type="button" class="admin-cancel-edit" id="newsCancelBtn" style="display:none;">Bekor qilish</button>
+
+                <p id="newsFormMessage" class="admin-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Mavjud yangiliklar</h2>
+            <div class="admin-list" id="newsList">
+                <p class="admin-empty">Yuklanmoqda...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TA'LIM YO'NALISHLARI PANELI -->
+    <section class="admin-panel" id="coursesTab">
+        <div class="admin-card">
+            <h2 id="courseFormTitle">Yangi yo'nalish qo'shish</h2>
+            <form id="courseForm">
+                <input type="hidden" id="courseId">
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="courseTitle">Nomi</label>
+                        <input type="text" id="courseTitle" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="courseIcon">Belgi (2 harf yoki emoji)</label>
+                        <input type="text" id="courseIcon" placeholder="Masalan: IT yoki 💻">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field full">
+                        <label for="courseDescription">Tavsif</label>
+                        <textarea id="courseDescription"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="admin-submit" id="courseSubmitBtn">Qo'shish</button>
+                <button type="button" class="admin-cancel-edit" id="courseCancelBtn" style="display:none;">Bekor qilish</button>
+
+                <p id="courseFormMessage" class="admin-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Mavjud yo'nalishlar</h2>
+            <div class="admin-list" id="courseList">
+                <p class="admin-empty">Yuklanmoqda...</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
